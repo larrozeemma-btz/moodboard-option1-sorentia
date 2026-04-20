@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorentia — Moodboard Suggestion #1</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 2rem 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #f7f7f5;
+  color: #1a1a1a;
+  line-height: 1.5;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.section-label {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  color: #127780;
+  margin: 0 0 10px;
+  font-weight: 500;
+}
+.header { text-align: center; margin-bottom: 2rem; }
+.header .eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: #127780;
+  margin: 0 0 8px;
+  font-weight: 500;
+}
+.header h1 {
+  font-size: 32px;
+  font-weight: 500;
+  margin: 0 0 8px;
+  color: #0c4d53;
+}
+.header .subtitle {
+  font-size: 15px;
+  color: #6b6b6b;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #127780 0%, #18a1ad 100%);
+  border-radius: 12px;
+  padding: 4rem 1.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.hero h2 {
+  font-size: 64px;
+  font-weight: 500;
+  color: #44f1b6;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+.hero p {
+  font-size: 14px;
+  letter-spacing: 0.4em;
+  color: #44f1b6;
+  margin: 10px 0 0;
+  opacity: 0.9;
+}
+
+/* Color psychology */
+.psych-card {
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+  background: linear-gradient(135deg, #7dd3d0 0%, #18a1ad 100%);
+}
+.psych-card h3 {
+  font-size: 26px;
+  font-weight: 500;
+  color: white;
+  margin: 0 0 10px;
+}
+.psych-card p {
+  font-size: 15px;
+  color: white;
+  margin: 0;
+  line-height: 1.5;
+  opacity: 0.95;
+  max-width: 560px;
+}
+
+/* Palette */
+.palette {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-bottom: 1.75rem;
+}
+.swatch {
+  border-radius: 8px;
+  padding: 18px 6px 12px;
+  text-align: center;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.swatch .hex {
+  font-size: 11px;
+  margin: 0;
+  font-weight: 500;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+}
+.swatch .name {
+  font-size: 10px;
+  margin: 3px 0 0;
+  opacity: 0.8;
+}
+.swatch.light .hex, .swatch.light .name { color: #04342c; }
+.swatch.dark .hex, .swatch.dark .name { color: #E1F5EE; }
+
+/* Cards / mockups */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.card {
+  background: white;
+  border: 0.5px solid rgba(0,0,0,0.12);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.card .meta { padding: 12px; }
+.card .meta .title {
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0 0 2px;
+  color: #1a1a1a;
+}
+.card .meta .desc {
+  font-size: 11px;
+  color: #6b6b6b;
+  margin: 0;
+}
+
+/* Signature mock */
+.mock-signature {
+  background: linear-gradient(135deg, #127780 0%, #18a1ad 100%);
+  padding: 2rem 1rem;
+  text-align: center;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mock-signature .eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: #44f1b6;
+  margin: 0 0 8px;
+  opacity: 0.9;
+}
+.mock-signature h3 {
+  font-size: 28px;
+  font-weight: 500;
+  color: #44f1b6;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+.mock-signature .tagline {
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  color: #44f1b6;
+  margin: 5px 0 0;
+  opacity: 0.9;
+}
+
+/* Stationery mock */
+.mock-stationery {
+  background: #0c4d53;
+  padding: 2rem 1rem;
+  text-align: center;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mock-stationery .inner {
+  background: #18a1ad;
+  border-radius: 6px;
+  padding: 18px 28px;
+}
+.mock-stationery h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #44f1b6;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+.mock-stationery .tagline {
+  font-size: 7px;
+  letter-spacing: 0.4em;
+  color: #44f1b6;
+  margin: 3px 0 0;
+  opacity: 0.9;
+}
+
+/* Social story mocks */
+.mock-story {
+  padding: 1.25rem 0.75rem;
+  text-align: center;
+  aspect-ratio: 9/14;
+  display: flex;
+  flex-direction: column;
+}
+.story-1 {
+  background: linear-gradient(180deg, #127780 0%, #0c4d53 100%);
+  justify-content: space-between;
+}
+.story-2 {
+  background: linear-gradient(180deg, #18a1ad 0%, #127780 100%);
+  justify-content: center;
+  align-items: center;
+}
+.story-3 {
+  background: #0c4d53;
+  justify-content: center;
+  align-items: center;
+}
+.story-1 .copy {
+  font-size: 12px;
+  color: white;
+  margin: 0;
+  line-height: 1.4;
+  font-weight: 500;
+  padding-top: 0.5rem;
+}
+.story-1 .cta {
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: white;
+  margin: 8px 0 0;
+  opacity: 0.9;
+}
+.story-1 .logo {
+  font-size: 15px;
+  font-weight: 500;
+  color: #44f1b6;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+.story-1 .logo-tagline {
+  font-size: 6px;
+  letter-spacing: 0.3em;
+  color: #44f1b6;
+  margin: 2px 0 0;
+  opacity: 0.9;
+}
+.story-2 .icon-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #44f1b6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.story-2 .icon-circle span {
+  font-size: 22px;
+  color: #0c4d53;
+  font-weight: 500;
+}
+.story-2 .copy {
+  font-size: 12px;
+  color: white;
+  margin: 0;
+  line-height: 1.4;
+  font-weight: 500;
+}
+.story-2 .cta {
+  font-size: 9px;
+  color: #44f1b6;
+  margin: 8px 0 0;
+  letter-spacing: 0.15em;
+}
+.story-3 h3 {
+  font-size: 22px;
+  font-weight: 500;
+  color: #44f1b6;
+  margin: 0 0 8px;
+  letter-spacing: 0.02em;
+}
+.story-3 .divider {
+  width: 30px;
+  height: 2px;
+  background: #44f1b6;
+  margin: 0 0 10px;
+}
+.story-3 .copy {
+  font-size: 11px;
+  color: white;
+  margin: 0;
+  line-height: 1.4;
+}
+.story-3 .logo {
+  font-size: 13px;
+  font-weight: 500;
+  color: #44f1b6;
+  margin: 14px 0 0;
+}
+
+/* Browser mock */
+.browser-frame {
+  background: #f7f7f5;
+  padding: 1rem;
+}
+.browser-inner {
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+}
+.browser-dots {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+.browser-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+.browser-dots .d1 { background: #ff5f57; }
+.browser-dots .d2 { background: #ffbd2e; }
+.browser-dots .d3 { background: #28c840; }
+.browser-hero {
+  background: #127780;
+  border-radius: 4px;
+  padding: 16px 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.browser-hero .logo {
+  font-size: 14px;
+  font-weight: 500;
+  color: #44f1b6;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+.browser-hero .tagline {
+  font-size: 6px;
+  letter-spacing: 0.3em;
+  color: #44f1b6;
+  margin: 3px 0 0;
+  opacity: 0.9;
+}
+.browser-hero-blog { padding: 14px 10px; }
+.browser-hero-blog .eyebrow {
+  font-size: 8px;
+  font-style: italic;
+  color: #44f1b6;
+  margin: 0 0 4px;
+  opacity: 0.9;
+}
+.browser-hero-blog h4 {
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+.browser-hero-blog .sub {
+  font-size: 7px;
+  font-style: italic;
+  color: #44f1b6;
+  margin: 4px 0 0;
+  opacity: 0.9;
+}
+.browser-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.browser-lines div {
+  height: 4px;
+  background: #e8e6df;
+  border-radius: 2px;
+}
+
+/* Attributes */
+.attributes {
+  background: white;
+  border: 0.5px solid rgba(0,0,0,0.12);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+.attr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+.attr {
+  background: #faf9f5;
+  padding: 12px 14px;
+}
+.attr.mint { border-left: 3px solid #15eda3; }
+.attr.teal { border-left: 3px solid #127780; }
+.attr.soft { border-left: 3px solid #44f1b6; }
+.attr.ocean { border-left: 3px solid #18a1ad; }
+.attr .title {
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0;
+  color: #1a1a1a;
+}
+.attr .desc {
+  font-size: 11px;
+  color: #6b6b6b;
+  margin: 3px 0 0;
+}
+
+@media print {
+  body { background: white; padding: 0; }
+  .container { max-width: 100%; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <p class="eyebrow">SUGGESTION #1 — LOOK &amp; FEEL</p>
+    <h1>Sorentia</h1>
+    <p class="subtitle">Tout se loue — modern, trustworthy, approachable</p>
+  </div>
+
+  <div class="hero">
+    <h2>SORENTIA</h2>
+    <p>TOUT SE LOUE</p>
+  </div>
+
+  <p class="section-label">COLOR PSYCHOLOGY</p>
+  <div class="psych-card">
+    <h3>Teal</h3>
+    <p>Creativity, inspiration, excitement, tranquility, and youth</p>
+  </div>
+
+  <p class="section-label">PALETTE</p>
+  <div class="palette">
+    <div class="swatch light" style="background:#15eda3;"><p class="hex">#15eda3</p><p class="name">Primary mint</p></div>
+    <div class="swatch dark" style="background:#127780;"><p class="hex">#127780</p><p class="name">Deep teal</p></div>
+    <div class="swatch light" style="background:#44f1b6;"><p class="hex">#44f1b6</p><p class="name">Soft mint</p></div>
+    <div class="swatch dark" style="background:#0fc083;"><p class="hex">#0fc083</p><p class="name">Emerald</p></div>
+    <div class="swatch dark" style="background:#18a1ad;"><p class="hex">#18a1ad</p><p class="name">Ocean teal</p></div>
+    <div class="swatch dark" style="background:#0c4d53;"><p class="hex">#0c4d53</p><p class="name">Midnight</p></div>
+  </div>
+
+  <p class="section-label">BRAND APPLICATIONS</p>
+  <div class="grid-2">
+    <div class="card">
+      <div class="mock-signature">
+        <p class="eyebrow">WEBSITE</p>
+        <h3>SORENTIA</h3>
+        <p class="tagline">TOUT SE LOUE</p>
+      </div>
+      <div class="meta">
+        <p class="title">Brand signature</p>
+        <p class="desc">Primary logo on gradient</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="mock-stationery">
+        <div class="inner">
+          <h3>SORENTIA</h3>
+          <p class="tagline">TOUT SE LOUE</p>
+        </div>
+      </div>
+      <div class="meta">
+        <p class="title">Stationery</p>
+        <p class="desc">Letterhead &amp; business cards</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-3">
+    <div class="card">
+      <div class="mock-story story-1">
+        <div>
+          <p class="copy">We are offering<br/>20 percent off<br/>our services.</p>
+          <p class="cta">&gt; BOOK NOW</p>
+        </div>
+        <div>
+          <p class="logo">SORENTIA</p>
+          <p class="logo-tagline">TOUT SE LOUE</p>
+        </div>
+      </div>
+      <div class="meta">
+        <p class="title">Social stories</p>
+        <p class="desc">Promo template</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="mock-story story-2">
+        <div class="icon-circle"><span>S</span></div>
+        <p class="copy">Louez tout,<br/>partout.</p>
+        <p class="cta">&gt; EN SAVOIR PLUS</p>
+      </div>
+      <div class="meta">
+        <p class="title">Social post</p>
+        <p class="desc">Icon + tagline</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="mock-story story-3">
+        <h3>NEW</h3>
+        <div class="divider"></div>
+        <p class="copy">Découvrez nos<br/>nouveautés</p>
+        <p class="logo">SORENTIA</p>
+      </div>
+      <div class="meta">
+        <p class="title">Editorial post</p>
+        <p class="desc">Minimal accent</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="browser-frame">
+        <div class="browser-inner">
+          <div class="browser-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <div class="browser-hero">
+            <p class="logo">SORENTIA</p>
+            <p class="tagline">TOUT SE LOUE</p>
+          </div>
+          <div class="browser-lines">
+            <div style="width:90%;"></div>
+            <div style="width:70%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="meta">
+        <p class="title">Website</p>
+        <p class="desc">Clean layouts, brand hero</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="browser-frame">
+        <div class="browser-inner">
+          <div class="browser-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <div class="browser-hero browser-hero-blog">
+            <p class="eyebrow">To our new friends</p>
+            <h4>ALL ABOUT US.</h4>
+            <p class="sub">We're quite design savvy!</p>
+          </div>
+          <div class="browser-lines">
+            <div style="width:85%;"></div>
+            <div style="width:60%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="meta">
+        <p class="title">Blog banners</p>
+        <p class="desc">Editorial with italic accents</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="attributes">
+    <p class="section-label">BRAND ATTRIBUTES</p>
+    <div class="attr-grid">
+      <div class="attr mint">
+        <p class="title">Modern</p>
+        <p class="desc">Bold sans-serif type</p>
+      </div>
+      <div class="attr teal">
+        <p class="title">Trustworthy</p>
+        <p class="desc">Deep teal foundations</p>
+      </div>
+      <div class="attr soft">
+        <p class="title">Fresh</p>
+        <p class="desc">Mint accents throughout</p>
+      </div>
+      <div class="attr ocean">
+        <p class="title">Approachable</p>
+        <p class="desc">Rounded, wide letterforms</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
